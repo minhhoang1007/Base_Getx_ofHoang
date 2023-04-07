@@ -1,36 +1,35 @@
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-// abstract class BaseController extends GetxController {
-//   BuildContext context;
+abstract class BaseController extends GetxController {
+  late BuildContext context;
 
-//   BaseController() {
-//     // TODO: implement 
-//     throw UnimplementedError();
-//   }
+  BaseController() {
+    // TODO: implement
+    throw UnimplementedError();
+  }
 
-//   void initData() {}
+  void initData() {}
 
-//   @override
-//   void onClose() {
-//     dispose();
-//     super.onClose();
-//   }
-// }
+  @override
+  void onClose() {
+    dispose();
+    super.onClose();
+  }
+}
 
+class BaseStatus {}
 
-// class BaseStatus {}
+class BaseStatusLoading extends BaseStatus {}
 
-// class BaseStatusLoading extends BaseStatus {}
+class BaseStatusLoaded extends BaseStatus {
+  dynamic value;
 
-// class BaseStatusLoaded extends BaseStatus {
-//   dynamic value;
+  BaseStatusLoaded(this.value);
+}
 
-//   BaseStatusLoaded(this.value);
-// }
+class BaseStatusFailed extends BaseStatus {
+  String mess;
 
-// class BaseStatusFailed extends BaseStatus {
-//   String mess;
-
-//   BaseStatusFailed(this.mess);
-// }
+  BaseStatusFailed(this.mess);
+}
